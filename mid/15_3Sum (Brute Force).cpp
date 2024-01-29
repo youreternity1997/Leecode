@@ -1,6 +1,6 @@
 // brute force
 // Time : O(n^3)
-// Space : O(n^2)
+// Space : O(n)
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
