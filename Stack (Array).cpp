@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+# include<iostream>
+#include<string>
 using namespace std;
 int st[100100], now = 0;
 
