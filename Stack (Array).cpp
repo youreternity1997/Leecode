@@ -3,23 +3,19 @@
 using namespace std;
 int st[100100], now = 0;
 
-// push 將元素放入 stack
 void push(int num){
     st[now] = num;
     now++;
 }
 
-// 確認 stack 是否為空
 bool isempty(){
     return now == 0;
 }
 
-// 回傳 stack 大小
 int size(){
     return now;
 }
 
-// 清空 stack
 void clear(){
     now = 0;
 }
