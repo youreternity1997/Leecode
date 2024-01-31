@@ -55,7 +55,7 @@ int Stack::size(){
     return top+1;
 }
 bool Stack::isEmpty(){
-    return (top == 0);
+    return (top == -1);
 }
 bool Stack::isFull(){
     return (top == MAX_SIZE-1);
@@ -83,8 +83,8 @@ int main(){
     stack.push(5);
     stack.push(6); //stack is full
     stack.outputStack();
-    cout << "pop value= "<< stack.pop() << endl;
-    cout << "peek value= "<< stack.peek() << endl;
+    cout << "pop data= "<< stack.pop() << endl;
+    cout << "top data= "<< stack.peek() << endl;
     stack.outputStack();
     return 0;
 }

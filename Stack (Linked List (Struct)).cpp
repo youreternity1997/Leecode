@@ -6,6 +6,7 @@ struct Node {
    struct Node *next;
 };
 struct Node* top = NULL;
+
 void push(int val) {
    struct Node* newnode = (struct Node*) malloc(sizeof(struct Node));
    newnode->data = val;
