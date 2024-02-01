@@ -43,7 +43,6 @@ void dequeue(){
     }
     else{
         cout <<"dequeue= "<< front << ",  data= "<< queue[++front] << endl;
-        //return queue[++front];
     }
 }
 
@@ -51,7 +50,13 @@ void Front(){
     if(isQueueEmpty())
         cout << "Queue is empty" << endl;
     else
-        cout <<"front = "<< front << " Front data : "<< queue[++front] << endl;
+        if (front == -1){
+            cout <<"front = "<< 0 << " Front data : "<< queue[0] << endl;
+        }
+        else{
+            cout <<"front = "<< front << " Front data : "<< queue[++front] << endl;
+        }
+        
 }
 
 void PrintQueue()
