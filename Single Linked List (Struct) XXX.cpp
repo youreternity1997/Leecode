@@ -3,7 +3,7 @@
 
  
 struct student{
-    int score;
+    int value;
     student *next;
 };
  
