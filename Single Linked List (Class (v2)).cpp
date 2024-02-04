@@ -23,7 +23,8 @@ public:
     int popFront();
     void pushBack(int);
     int popBack();
-    
+    void insert(int);
+    void remove(int);
 };
 
 void SLL::pushFront(int _data) {
@@ -121,6 +122,60 @@ int SLL::popBack()
         prev -> next = NULL;
     }
     return toBeReturn;
+}
+
+void SLL::insert(int _data) {
+    if (this -> head == NULL) { // 鏈結串列為空
+        this -> head = new SLLNode(_data);
+        return;
+    }
+    if (_data <= this -> head -> data) { // pushFront()
+        SLLNode *newSLLNode = new SLLNode(_data);
+        newSLLNode -> next = this -> head;
+        this -> head = newSLLNode;
+        return;
+    }
+    SLLNode *cur = this -> head;
+    while (1)
+    {
+        if (cur -> next == NULL) { // pushBack()
+            SLLNode *newSLLNode = new SLLNode(_data);
+            cur -> next = newSLLNode;
+            return;
+        }
+        else if (cur -> next -> data < _data)
+            cur = cur -> next;
+        else {
+            SLLNode *newSLLNode = new SLLNode(_data);
+            newSLLNode -> next = cur -> next;
+            cur -> next = newSLLNode;
+            return;
+        }
+    }
+}
+
+void SLL::remove(int tg) {
+    if (this -> head == NULL) 
+        return ;
+    if (this -> head -> data == tg) {
+        SLLNode *tmp = this -> head;
+        this -> head = this -> head -> next;
+        delete tmp;
+        return ;
+    }
+    SLLNode *cur = this -> head, *prev;
+    while (cur) {
+        if (cur -> data == tg) {
+            prev -> next = cur -> next;
+            delete cur;
+            return ;
+        }
+        else {
+            prev = cur;
+            cur = cur -> next;
+        }
+    }
+    return ;
 }
 
 int main() {

@@ -24,6 +24,8 @@ public:
     int popFront();
     void pushBack(int);
     int popBack();
+    void insert(int);
+    void remove(int);
 };
 
 void DLL::pushFront(int _data) {
@@ -123,7 +125,85 @@ int DLL::popBack()
     return toBeReturn;
 }
 
+void DLL::insert(int _data) {
+    if (this -> head == NULL) { // 鏈結串列為空
+        this -> head = new DLLNode(_data);
+        this -> tail = this -> head;
+        return;
+    }
+    if (_data <= this -> head -> data) { // pushFront()
+        DLLNode *newDLLNode = new DLLNode(_data);
+        newDLLNode -> next = this -> head;
+        this -> head -> prev = newDLLNode;
+        this -> head = newDLLNode;
+        return;
+    }
+    DLLNode *cur = this -> head;
+    while (1)
+    {
+        if (cur -> next == NULL) { // pushBack()
+            DLLNode *newDLLNode = new DLLNode(_data);
+            cur -> next = newDLLNode;
+            newDLLNode -> prev = cur;
+            return;
+        }
+        else if (cur -> next -> data < _data)
+            cur = cur -> next;
+        else {
+            DLLNode *newDLLNode = new DLLNode(_data);
+            newDLLNode -> next = cur -> next;
+            newDLLNode -> prev = cur;
+            newDLLNode -> next -> prev = newDLLNode;
+            cur -> next = newDLLNode;
+            return;
+        }
+    }
+}
 
+void DLL::remove(int tg) {
+    DLLNode *tmp;
+    if (this -> head == NULL) { // 鏈結串列為空
+        return ;
+    }
+    if (this -> head -> data == tg) { // 目標節點為鏈結串列第一個節點
+        tmp = this -> head;
+        this -> head = this -> head -> next;
+        if (this -> head == NULL) { // 考慮鏈結串列是否為空
+            this -> tail = NULL;
+            delete tmp;
+            return ;
+        }
+        delete tmp;
+        this -> head -> prev = NULL;
+        return ;
+    }
+    if (this -> tail -> data == tg) { // 目標節點為鏈結串列第一個節點
+        tmp = this -> tail;
+        this -> tail = this -> tail -> prev;
+        if (this -> tail == NULL) { // 考慮鏈結串列是否為空
+            this -> head = NULL;
+            delete tmp;
+            return ;
+        }
+        delete tmp;
+        this -> tail -> next = NULL;
+        return ;
+    }
+    DLLNode *cur = this -> head;
+    while (cur) { // 目標節點在鏈結串列中間
+        if (cur -> data == tg) {
+            tmp = cur;
+            cur -> prev -> next = cur -> next;
+            cur -> next -> prev = tmp -> prev;
+            delete tmp;
+            return ;
+        }
+        else {
+            cur = cur -> next;
+        }
+    }
+    return ; // 目標節點不存在於鏈結串列中
+}   
 
 int main() {
     DLL *dll = new DLL;

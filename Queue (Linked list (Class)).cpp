@@ -92,7 +92,6 @@ void Queue::Front(){
         
 }
 
-
 int main() {
     Queue *queue = new Queue;
     queue -> enqueue(1);
@@ -111,7 +110,6 @@ int main() {
 
     queue -> dequeue();
     queue -> printAll();
-
     return 0;
 }
 
