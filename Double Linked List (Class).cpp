@@ -26,6 +26,7 @@ public:
     int popBack();
     void insert(int);
     void remove(int);
+    void reverse();
 };
 
 void DLL::pushFront(int _data) {
@@ -204,6 +205,23 @@ void DLL::remove(int tg) {
     }
     return ; // 目標節點不存在於鏈結串列中
 }   
+
+void DLL::reverse()
+{
+    DLLNode *prev = NULL;
+    DLLNode *cur = this -> head;
+    DLLNode *next;
+    this -> tail = this -> head;
+    while (cur != NULL)
+    {
+        next = cur -> next;
+        cur -> next = prev;
+        cur -> prev = next;
+        prev = cur;
+        cur = next;
+    }
+    this -> head = prev;
+}
 
 int main() {
     DLL *dll = new DLL;

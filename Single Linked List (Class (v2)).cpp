@@ -25,6 +25,7 @@ public:
     int popBack();
     void insert(int);
     void remove(int);
+    void reverse();
 };
 
 void SLL::pushFront(int _data) {
@@ -176,6 +177,38 @@ void SLL::remove(int tg) {
         }
     }
     return ;
+}
+
+/*
+SLLNode *reverse(SLLNode *head) {
+    std::vector <int> temp;
+    SLLNode *cur = head;
+    while (cur) {
+        temp.push_back(cur -> data);
+        cur = cur -> next;
+    }
+    cur = head;
+    for (int i=temp.size()-1; i>=0; i--) {
+        cur -> data = temp[i];
+        cur = cur -> next;
+    }
+    return head;
+}
+*/
+
+void SLL::reverse()
+{
+    SLLNode *prev = NULL;
+    SLLNode *cur = this -> head;
+    SLLNode *next;
+    while (cur != NULL)
+    {
+        next = cur -> next;
+        cur -> next = prev;
+        prev = cur;
+        cur = next;
+    }
+    this -> head = prev;
 }
 
 int main() {
