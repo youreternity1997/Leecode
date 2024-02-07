@@ -56,12 +56,3 @@ int main() {
 
     return 0;
 }
-
-
-
-
-
-    //void printAll();
-    //int popFront();
-    //void pushBack(int);
-    //int popBack();
