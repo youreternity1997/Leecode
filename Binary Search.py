@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Dec 24 13:45:09 2023
-
-@author: User
-"""
-
 # Binary Search in python
-
 
 def binarySearch(array, target):
     left = 0
