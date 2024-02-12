@@ -18,7 +18,7 @@ def getY(fib, n):
 def search(data, key):
     fib = fibo(len(data))
     max = len(data) - 1  # data的最大索引值
-    y = getY(fib, max + 1) # 在費氏數列裡的值，如果比data的最大索引值還大，回傳費氏數列索引值的前一個
+    y = getY(fib, max + 1) # 在費氏數列裡的值，如果比data的最大索引值()還大，回傳費氏數列索引值的前一個
     m = max - fib[y] 
     x = y - 1  #找到在data搜尋的起始索引值
     print("\nx=%d, m=%d, fib[x]=%d" % (x, m, fib[x]))
