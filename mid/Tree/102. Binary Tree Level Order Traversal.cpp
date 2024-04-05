@@ -1,7 +1,6 @@
 // https://leetcode.com/problems/binary-tree-level-order-traversal/solutions/2008729/o-n-time-beats-99-97-memory-speed-0ms-may-2022/
 // Time complexity: O(n)
 // Space complexity: O(h)
-// 
 
 class Solution {
      public:
