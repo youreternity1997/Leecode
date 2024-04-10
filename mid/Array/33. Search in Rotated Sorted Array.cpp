@@ -7,9 +7,14 @@
 #include<iostream>    
 #include <vector>
 
+// https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/3879263/100-binary-search-easy-video-o-log-n-optimal-solution/
+// Time Complexity : O(log⁡n)
+// Space Complexity : O(1)
+// Binary Search
+
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
+    int search(std::vector<int>& nums, int target) {
         int low = 0, high = nums.size() - 1;
 
         while (low <= high) {
@@ -19,21 +24,20 @@ public:
                 return mid;
             }
 
-            if (nums[low] <= nums[mid]) {
-                if (nums[low] <= target && target < nums[mid]) {
-                    high = mid - 1;
+            if (nums[low] <= nums[mid]) { // The array portion is non-rotated.
+                if (target >= nums[low] && target < nums[mid]) {
+                    high = mid - 1; // search non-rotated portion
                 } else {
-                    low = mid + 1;
+                    low = mid + 1; // search rotated portion
                 }
-            } else {
-                if (nums[mid] < target && target <= nums[high]) {
-                    low = mid + 1;
+            } else { // The array portion is rotated.
+                if (target > nums[mid] && target <= nums[high]) {
+                    low = mid + 1; // search rotated portion
                 } else {
-                    high = mid - 1;
+                    high = mid - 1; // search non-rotated portion
                 }
             }
         }
-
         return -1;
     }
 };
