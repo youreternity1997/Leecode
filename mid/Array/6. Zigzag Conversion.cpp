@@ -25,7 +25,6 @@ public:
     }
 };
 
-
 int main(){
     string s = "PAYPALISHIRING";
     int numRows = 3;
