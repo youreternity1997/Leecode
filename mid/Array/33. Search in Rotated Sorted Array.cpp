@@ -1,3 +1,8 @@
+// https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/3879263/100-binary-search-easy-video-o-log-n-optimal-solution/
+// Time Complexity : O(log⁡n)
+// Space Complexity : O(1)
+// Binary Search
+
 #include<array> 
 #include<iostream>    
 #include <vector>
