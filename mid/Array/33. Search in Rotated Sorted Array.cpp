@@ -1,8 +1,3 @@
-// https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/3879263/100-binary-search-easy-video-o-log-n-optimal-solution/
-// Time Complexity : O(log⁡n)
-// Space Complexity : O(1)
-// Binary Search
-
 #include<array> 
 #include<iostream>    
 #include <vector>
@@ -20,21 +15,23 @@ public:
         while (low <= high) {
             int mid = (low + high) / 2;
 
-            if (nums[mid] == target) {
+            if (nums[mid] == target) { // 剛好中間點就是答案就
                 return mid;
             }
-
-            if (nums[low] <= nums[mid]) { // The array portion is non-rotated.
+            // 左半邊是有序的 (left portion is non-rotated.)
+            if (nums[low] <= nums[mid]) { 
+                // 如果 target 在左半邊的範圍內，則繼續在左半邊進行搜尋 (search left portion (non-rotated))
                 if (target >= nums[low] && target < nums[mid]) {
-                    high = mid - 1; // search non-rotated portion
-                } else {
-                    low = mid + 1; // search rotated portion
+                    high = mid - 1; // 縮小右邊
+                } else { // 否則，轉向右半邊進行搜尋
+                    low = mid + 1; // 縮小左邊
                 }
-            } else { // The array portion is rotated.
+            } else { // 否則，則右半邊是有序的 (right portion is non-rotated/ left portion is rotated).
+                // 如果 target 在右半邊的範圍內，則繼續在右半邊進行搜尋
                 if (target > nums[mid] && target <= nums[high]) {
-                    low = mid + 1; // search rotated portion
-                } else {
-                    high = mid - 1; // search non-rotated portion
+                    low = mid + 1; 
+                } else { // 否則，轉向左半邊進行搜尋
+                    high = mid - 1; 
                 }
             }
         }
