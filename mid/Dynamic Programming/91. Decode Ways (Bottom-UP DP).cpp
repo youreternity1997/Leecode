@@ -3,6 +3,7 @@
 // Space: O(N)
 // Bottom-up DP
 
+
 class Solution { // 0 ms, faster than 100.00%
 public:
     int numDecodings(const string& s) {
