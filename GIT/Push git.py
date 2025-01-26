@@ -1,6 +1,14 @@
 import random
 import os
 from datetime import datetime
+
+# Ensure GitPython is installed
+try:
+    import git
+except ImportError:
+    os.system('pip install gitpython')
+    from git import Repo
+    
 from git import Repo
 
 
@@ -58,7 +66,7 @@ REPO_PATH = "../"  # Replace with your local repository path
 FILE_TO_EDIT = "../Fibonacci numbers.py"  # Replace with the file to randomly edit
 COMMIT_MESSAGE = datetime.now().strftime('%Y-%m-%d-%H-%M edit')
 GITHUB_REMOTE = "origin"  # Default remote name is 'origin'
-BRANCH_NAME = "main"  # Replace with your branch name
+BRANCH_NAME = "master"  # Replace with your branch name
 
 
 def main():
