@@ -64,7 +64,7 @@ def push_to_github(repo_path, commit_message, remote_name, branch_name):
 # Set up your configuration
 REPO_PATH = "../"  # Replace with your local repository path
 FILE_TO_EDIT = "../Fibonacci numbers.py"  # Replace with the file to randomly edit
-COMMIT_MESSAGE = datetime.now().strftime('%Y-%m-%d-%H-%M edit')
+COMMIT_MESSAGE = datetime.now().strftime('%Y-%m-%d %H:%M:%S edit')
 GITHUB_REMOTE = "origin"  # Default remote name is 'origin'
 BRANCH_NAME = "master"  # Replace with your branch name
 
