@@ -8,7 +8,7 @@ try:
 except ImportError:
     os.system('pip install gitpython')
     from git import Repo
-    
+
 from git import Repo
 
 
@@ -24,7 +24,7 @@ def random_edit(file_path):
 
         # Pick a random line to edit
         line_to_edit = random.randint(0, len(lines) - 1)
-        random_comment = f"# Edited on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+        random_comment = f"# Edited on {datetime.now().strftime('%Y-%m-%d %H:%M:%S edit')}\n"
 
         # Replace the chosen line with a comment or add a random modification
         lines[line_to_edit] = random_comment

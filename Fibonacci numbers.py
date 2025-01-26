@@ -1,5 +1,5 @@
 # Edited on 2025-01-26 23:35:32
-    if n == 0:
+# Edited on 2025-01-26 23:38:30 edit
         return 0;
     elif n == 1:
         return 1;
