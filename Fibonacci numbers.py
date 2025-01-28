@@ -3,6 +3,6 @@
 # Edited on 2025-01-27 16:11:26 edit
     elif n == 1:
         return 1;
-    return fibonacci(n-1) + fibonacci(n-2)
+# Edited on 2025-01-28 10:23:53 edit
     
 print(fibonacci(7))
