@@ -1,11 +1,12 @@
-# time complexity of O(n) 
-# Hash Map
+# https://leetcode.com/problems/contains-duplicate/solutions/2459020/very-easy-100-fully-explained-c-java-python-javascript-python3-creating-set/
+# Time complexity: O(n)
+# Space complexity: O(n)
 
-class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-        seen = {}
-        for num in nums:
-            if num in seen and seen[num] >= 1:
+class Solution(object):
+    def containsDuplicate(self, nums):
+        hset = set()
+        for idx in nums:
+            if idx in hset:
                 return True
-            seen[num] = seen.get(num, 0) + 1
-        return False
+            else:
+                hset.add(idx)
