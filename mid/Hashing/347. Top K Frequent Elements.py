@@ -1,24 +1,18 @@
-# https://leetcode.com/problems/top-k-frequent-elements/solutions/4580564/5-1-approach-1-o-n-log-n-python-c-step-by-step-explanation/
-# Time complexity : O(n log n)
-# Space complexity : O(n)
-# Hash Map
+# https://leetcode.com/problems/top-k-frequent-elements/solutions/1928198/python-simple-python-solution-using-dictionary-hashmap/
+# Time Complexity : O(n * log(n)) (n + nlogn(sorted())= nlogn)
+# Space Complexity : O(n)
+# Beats 90%
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        # Step 1: Use a dictionary (lis) to count the frequency of each element in nums.
-        lis = {} 
-        ans = [] 
-        for x in nums:
-            if x in lis:
-                lis[x] += 1
+        frequency = {}
+        for num in nums:
+            if num not in frequency:
+                frequency[num] = 1
             else:
-                lis[x] = 1
+                frequency[num] += 1
+
+        frequency = dict(sorted(frequency.items(), key=lambda x: x[1], reverse=True))
+        result = list(frequency.keys())[:k]
         
-        # Step 2: Sort the dictionary items based on frequency in descending order.
-        slis = sorted(lis.items(), key=lambda item: item[1], reverse=True)
-        
-        # Step 3: Extract the top k frequent elements and append them to the ans list.
-        for i in range(k):
-            ans.append(slis[i][0])
-        
-        return ans
+        return result
