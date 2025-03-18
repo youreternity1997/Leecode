@@ -1,20 +1,17 @@
-# Brute force/Two pointers (yes)
-# Time complexity: O(n)
-# Space complexity: O(1)
+# https://leetcode.com/problems/container-with-most-water/solutions/6522099/well-explained-approach-beats-90-runtime/
+# Time complexity:O(n)
+# Space complexity:O(1)
+# Beats 38.33%
 
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
-        left = 0
-        right = len(height) - 1
-        maxArea = 0
-
+    def maxArea(self, height: list[int]) -> int:
+        max_area = 0
+        left, right = 0, len(height) - 1
         while left < right:
-            currentArea = min(height[left], height[right]) * (right - left)
-            maxArea = max(maxArea, currentArea)
-
+            area = (right - left) * min(height[left], height[right])
+            max_area = max(max_area, area)
             if height[left] < height[right]:
                 left += 1
             else:
                 right -= 1
-
-        return maxArea
+        return max_area
