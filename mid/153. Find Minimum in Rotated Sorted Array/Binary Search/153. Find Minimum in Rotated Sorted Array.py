@@ -1,6 +1,7 @@
-# Time complexity: O(log n)
-# Space complexity: O(1)
+# Time complexity: O(log n) # 每一步都將搜尋範圍減半（binary search）
+# Space complexity: O(1) # 只用了常數空間（如 ans, low, high），沒有額外資料結構
 # Binary Search
+# Beats 100% 
 
 class Solution:
     def findMin(self, nums: List[int]) -> int:
