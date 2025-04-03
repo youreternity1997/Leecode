@@ -2,6 +2,7 @@
 # Time Complexity : O(log⁡n)
 # Space Complexity : O(1)
 # Binary Search
+# Beat 100%
 
 class Solution():
     def search(self, nums, target):
