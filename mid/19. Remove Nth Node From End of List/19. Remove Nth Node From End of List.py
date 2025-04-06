@@ -21,6 +21,3 @@ class Solution:
         second.next = second.next.next  # 刪除目標節點
 
         return dummy.next          # 回傳新的 head（即 dummy.next）
-        second.next = second.next.next
-
-        return dummy.next
