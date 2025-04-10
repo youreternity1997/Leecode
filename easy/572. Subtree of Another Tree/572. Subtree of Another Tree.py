@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/subtree-of-another-tree/solutions/4688190/50-1-approach-1-o-n-m-python-c-step-by-step-explanation/
-# Time complexity : O(n⋅m),where n is the number of nodes in the root tree and m is the number of nodes in the subRoot tree.
-# Space complexity: O(h), where h is the height of the root tree 
-# Recursion
+# Time complexity: The worst-case time complexity is O(n⋅m), where n is the number of nodes in the root tree and m is the number of nodes in the subRoot tree. 
+# space complexity is O(h), where h is the height of the root tree due to the recursive calls. In the worst case, the space complexity can be O(n) for a skewed tree.
+# Beats 92%
 
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
