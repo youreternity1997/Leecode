@@ -1,7 +1,8 @@
-# https://leetcode.com/problems/kth-smallest-element-in-a-bst/submissions/1224641831/
+# 
 # Time Complexity: O(N)
-# Space Complexity: O(N)
+# Space Complexity: O(H)
 # Stack + Iterate
+# Beats 100%
 
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
