@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  fastapi:
+    build: .
+    container_name: gigabyte-fastapi-app
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./models:/workspace/models
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
