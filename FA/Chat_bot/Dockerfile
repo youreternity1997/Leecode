@@ -1,6 +1,8 @@
 # 使用 NVIDIA 官方的 CUDA 映像
 #FROM nvidia/cuda:11.6.2-devel-ubuntu20.04
-FROM nvidia/cuda:11.6.1-runtime-ubuntu20.04
+#FROM nvidia/cuda:11.6.1-runtime-ubuntu20.04
+FROM nvidia/cuda:12.8.1-runtime-ubuntu22.04
+
 
 # 安裝 Python 3.10 + 基本工具
 RUN apt-get update && apt-get install -y python3.10 python3-pip git && rm -rf /var/lib/apt/lists/*

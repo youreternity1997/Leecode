@@ -1,8 +1,9 @@
 fastapi
 uvicorn[standard]
 transformers
-torch==1.13.1+cu116
-torchvision==0.14.1+cu116
-torchaudio==0.13.1+cu116
---extra-index-url https://download.pytorch.org/whl/cu116
+torch==2.7.0+cu128
+torchvision==0.22.0+cu128
+torchaudio==2.7.0+cu128
+--extra-index-url https://download.pytorch.org/whl/cu128
+accelerate
 psutil
