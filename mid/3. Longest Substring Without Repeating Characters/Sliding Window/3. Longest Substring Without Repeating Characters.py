@@ -2,6 +2,7 @@
 # Time Complexity: O(n)
 # Space Complexity: O(1) We use a fixed-size array of 128 integers, regardless of the input size.  O(k)，其中 k 是字元種類數。通常用 ASCII 就是固定的 128，視情況也可能是 256 或 Unicode。
 
+# Hash Map + Sliding Window
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         n = len(s)
