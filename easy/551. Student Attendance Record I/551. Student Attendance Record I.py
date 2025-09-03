@@ -20,4 +20,3 @@ class Solution:
                     late = 1
             prev = i
         return True
-        
